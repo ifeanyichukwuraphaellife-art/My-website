@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - IFEANYI CHIME AND CHIMA LTD</title>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <header>
@@ -24,15 +24,27 @@
   <section class="page-title"><h1>About ICCL</h1></section>
 
   <section class="section">
-    <h2>Building Nigeria's Future</h2>
-    <p style="text-align:center; max-width:900px; margin:0 auto; font-size:18px; color:#ccc;">
-    IFEANYI CHIME AND CHIMA LTD is a leading engineering and construction company based in Delta State, Nigeria. 
-    For over 15 years we have delivered civil, mechanical, and electrical engineering projects, 
-    architectural designs, construction works, and oil & gas services.
-    </p>
+    <h2>15+ Years of Engineering Excellence</h2>
+    <p style="text-align:center;max-width:900px;margin:0 auto 40px;color:#ccc;">IFEANYI CHIME AND CHIMA LTD is a leading engineering and construction company in Nigeria. We specialize in Civil, Mechanical, Electrical, Oil & Gas, and Real Estate projects.</p>
+    <div class="grid-3">
+      <div class="card"><h3>Our Mission</h3><p>To deliver world-class engineering solutions with integrity, safety, and excellence.</p></div>
+      <div class="card"><h3>Our Vision</h3><p>To be the most trusted engineering partner in West Africa.</p></div>
+      <div class="card"><h3>Our Values</h3><p>Quality, Safety, Innovation, and Client Satisfaction in every project.</p></div>
+    </div>
   </section>
 
-  <a href="https://wa.me/2348083435500" class="whatsapp-float">WhatsApp Us</a>
+  <button id="chat-toggle" onclick="toggleChat()">💬 Chat with ICCL</button>
+  <div id="chatbot">
+    <div id="chat-header">ICCL Assistant 🤖 <span onclick="toggleChat()" style="float:right;cursor:pointer">X</span></div>
+    <div id="chat-body"><p><b>Bot:</b> Want to know more about ICCL? Ask me anything.</p></div>
+    <div id="chat-input"><input id="userInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">Send</button></div>
+  </div>
+
+  <a href="https://wa.me/2348083435500" class="whatsapp-float" target="_blank">WhatsApp Us</a>
   <footer><p>© 2026 IFEANYI CHIME AND CHIMA LTD | Email: ifeanyichimeandchimaltd@gmail.com</p></footer>
+<script>
+function toggleChat(){const bot=document.getElementById('chatbot');bot.style.display=bot.style.display==='flex'?'none':'flex';}
+function sendMsg(){let i=document.getElementById('userInput');let m=i.value.toLowerCase();let b=document.getElementById('chat-body');if(i.value.trim()==='')return;b.innerHTML+=`<p><b>You:</b> ${i.value}</p>`;let r="ICCL has 15+ years experience with 200+ projects completed.";if(m.includes('mission'))r="Our mission is to deliver world-class engineering solutions with integrity.";b.innerHTML+=`<p><b>Bot:</b> ${r}</p>`;i.value='';b.scrollTop=b.scrollHeight;}
+</script>
 </body>
 </html>
