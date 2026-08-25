@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Playfair+Display:wght@900&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 img { max-width: 100%; height: auto; }
@@ -25,10 +25,21 @@ header {
   flex-wrap: wrap;
 }
 
-.logo { 
+.logo-box { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 50px;
+  height: 50px;
+}
+.logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(212,175,55,0.5));
+}
+.logo-text { 
   color: #d4af37; 
   font-weight: 900; 
-  font-size: clamp(15px, 3.5vw, 20px); 
+  font-size: clamp(13px, 3vw, 18px); 
   letter-spacing: 1px; 
   line-height: 1.2;
 }
@@ -49,7 +60,7 @@ nav a.active, nav a:hover { color: #d4af37; }
 }
 
 .hero h1 { font-size: clamp(28px, 8vw, 60px); color: #d4af37; margin-bottom: 20px; font-weight: 900; }
-.hero p { font-size: clamp(15px, 4vw, 20px); margin-bottom: 30px; color: #ccc; max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero p { font-size: clamp(15px, 4vw, 20px); margin-bottom: 30px; color: #ccc; max-width: 800px; margin: 0 auto 30px; }
 
 .btn {
   padding: 15px 30px;
@@ -70,4 +81,54 @@ nav a.active, nav a:hover { color: #d4af37; }
 
 .stats-bar {
   display: grid;
-  grid
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 60px 20px;
+  background: #000;
+  text-align: center;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+.stats-bar h3 { color: #d4af37; font-size: clamp(32px, 10vw, 48px); font-weight: 900; }
+.stats-bar p { color: #888; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
+
+.page-title { padding: 140px 20px 50px; text-align: center; background: #000; }
+.page-title h1 { font-size: clamp(28px, 8vw, 48px); color: #d4af37; font-weight: 900; }
+
+.section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+.section h2 { color: #d4af37; font-size: clamp(26px, 6vw, 40px); margin-bottom: 20px; text-align: center; font-weight: 900; }
+
+.grid-3 { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px; 
+}
+.card {
+  background: #0a0a0a;
+  padding: 40px 30px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+.card:hover { border-color: #d4af37; transform: translateY(-5px); }
+.card h3 { color: #d4af37; margin-bottom: 15px; font-size: 20px; }
+
+.contact-info { text-align: center; font-size: 16px; line-height: 2; }
+.contact-info strong { color: #d4af37; }
+
+.whatsapp-float {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #25D366; color: #fff; padding: 15px 20px;
+  border-radius: 50px; text-decoration: none; font-weight: 700;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.4); z-index: 999;
+  font-size: 14px;
+}
+
+footer { text-align: center; padding: 50px 20px; background: #000; border-top: 1px solid #222; color: #666; }
+
+@media (min-width: 768px) {
+  header { padding: 20px 60px; }
+  nav { gap: 35px; }
+  .logo-icon { width: 60px; height: 60px; }
+  .stats-bar { grid-template-columns: repeat(4, 1fr); }
+  .section { padding: 100px 60px; }
+}
