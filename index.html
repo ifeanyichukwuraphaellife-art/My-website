@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IFEANYI CHIME AND CHIMA LTD - ICCL</title>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <header>
@@ -22,10 +22,15 @@
   </header>
 
   <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="assets/montage.mp4" type="video/mp4">
+    </video>
     <h1>Engineering Excellence.<br>Built To Last.</h1>
     <p>Civil, Mechanical, Electrical Engineering | Construction | Oil & Gas | Structural Works</p>
-    <a href="services.html" class="btn btn-gold">Our Services</a>
-    <a href="contact.html" class="btn btn-outline">Get Quote</a>
+    <div>
+      <a href="services.html" class="btn btn-gold">Our Services</a>
+      <a href="contact.html" class="btn btn-outline">Get Quote</a>
+    </div>
   </section>
 
   <section class="stats-bar">
@@ -44,7 +49,31 @@
     </div>
   </section>
 
-  <a href="https://wa.me/2348083435500" class="whatsapp-float">WhatsApp Us</a>
-  <footer><p>© 2026 IFEANYI CHIME AND CHIMA LTD | ICCL | Email: ifeanyichimeandchimaltd@gmail.com</p></footer>
+  <section class="section" style="background:#0f0f0f;">
+    <h2>Our Core Services</h2>
+    <div class="service-grid">
+      <div class="service-card"><img src="assets/construction.jpg" alt=""><div class="service-info"><h3>ROAD CONSTRUCTION</h3></div></div>
+      <div class="service-card"><img src="assets/realestate.jpg" alt=""><div class="service-info"><h3>REAL ESTATE</h3></div></div>
+      <div class="service-card"><img src="assets/oilgas.jpg" alt=""><div class="service-info"><h3>OIL & GAS</h3></div></div>
+      <div class="service-card"><img src="assets/electrical.jpg" alt=""><div class="service-info"><h3>ELECTRICAL</h3></div></div>
+      <div class="service-card"><img src="assets/mechanical.jpg" alt=""><div class="service-info"><h3>MECHANICAL</h3></div></div>
+      <div class="service-card"><img src="assets/civil.jpg" alt=""><div class="service-info"><h3>CIVIL ENGINEERING</h3></div></div>
+      <div class="service-card"><img src="assets/logistics.jpg" alt=""><div class="service-info"><h3>LOGISTICS</h3></div></div>
+    </div>
+  </section>
+
+  <button id="chat-toggle" onclick="toggleChat()">💬 Chat with ICCL</button>
+  <div id="chatbot">
+    <div id="chat-header">ICCL Assistant 🤖 <span onclick="toggleChat()" style="float:right;cursor:pointer">X</span></div>
+    <div id="chat-body"><p><b>Bot:</b> Welcome to ICCL! Ask me about services or quotes.</p></div>
+    <div id="chat-input"><input id="userInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">Send</button></div>
+  </div>
+
+  <a href="https://wa.me/2348083435500" class="whatsapp-float" target="_blank">WhatsApp Us</a>
+  <footer><p>© 2026 IFEANYI CHIME AND CHIMA LTD | Email: ifeanyichimeandchimaltd@gmail.com</p></footer>
+<script>
+function toggleChat(){const bot=document.getElementById('chatbot');bot.style.display=bot.style.display==='flex'?'none':'flex';}
+function sendMsg(){let i=document.getElementById('userInput');let m=i.value.toLowerCase();let b=document.getElementById('chat-body');if(i.value.trim()==='')return;b.innerHTML+=`<p><b>You:</b> ${i.value}</p>`;let r="I can help with services, quotes, or contact info.";if(m.includes('service'))r="We offer: Road Construction, Real Estate, Oil & Gas, Electrical, Mechanical, Civil, Logistics.";if(m.includes('quote'))r="Please visit our Contact page to request a quote.";b.innerHTML+=`<p><b>Bot:</b> ${r}</p>`;i.value='';b.scrollTop=b.scrollHeight;}
+</script>
 </body>
 </html>
