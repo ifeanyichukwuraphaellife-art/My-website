@@ -24,22 +24,15 @@
   <section class="page-title"><h1>Contact Us</h1></section>
 
   <section class="section">
-    <h2 style="text-align:center;">Let's Work Together</h2>
+    <h2>Let's Work Together</h2>
     <div class="contact-grid">
-      
-      <!-- Contact Info -->
       <div class="contact-info">
         <p><strong>Address:</strong><br>Omo Isekuata, Ibozo, Delta State, Nigeria</p>
         <p><strong>Phone:</strong><br>0808 343 5500<br>0806 884 6086</p>
         <p><strong>Email:</strong><br>ifeanyichimeandchimaltd@gmail.com</p>
-        <br>
-        <a href="https://wa.me/2348083435500" class="btn btn-gold" target="_blank">Chat on WhatsApp</a>
-        
-        <!-- Google Map -->
+        <br><a href="https://wa.me/2348083435500" class="btn btn-gold" target="_blank">Chat on WhatsApp</a>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.5!2d6.0!3d5.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzAnMDAuMCJOIDbCsDAwJzAwLjAiRQ!5e0!3m2!1sen!2sng!4v123456" allowfullscreen="" loading="lazy"></iframe>
       </div>
-
-      <!-- Contact Form -->
       <div class="contact-form">
         <h3>Send us a Message</h3>
         <form onsubmit="sendForm(event)">
@@ -50,54 +43,22 @@
           <button type="submit">Send Message</button>
         </form>
       </div>
-
     </div>
   </section>
 
-  <!-- CHATBOT -->
   <button id="chat-toggle" onclick="toggleChat()">💬 Chat with ICCL</button>
   <div id="chatbot">
     <div id="chat-header">ICCL Assistant 🤖 <span onclick="toggleChat()" style="float:right;cursor:pointer">X</span></div>
-    <div id="chat-body"><p><b>Bot:</b> Hi! Need a quote or have questions about ICCL services?</p></div>
-    <div id="chat-input">
-      <input id="userInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMsg()">
-      <button onclick="sendMsg()">Send</button>
-    </div>
+    <div id="chat-body"><p><b>Bot:</b> Need a quote? Fill the form or ask me here.</p></div>
+    <div id="chat-input"><input id="userInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">Send</button></div>
   </div>
 
   <a href="https://wa.me/2348083435500" class="whatsapp-float" target="_blank">WhatsApp Us</a>
   <footer><p>© 2026 IFEANYI CHIME AND CHIMA LTD | Email: ifeanyichimeandchimaltd@gmail.com</p></footer>
-
 <script>
-function toggleChat(){
-  const bot = document.getElementById('chatbot');
-  bot.style.display = bot.style.display==='flex' ? 'none' : 'flex';
-}
-const replies = {
-  "hello": "Hello! Welcome to ICCL. How can we help?",
-  "services": "We do Road Construction, Real Estate, Oil & Gas, Electrical, Mechanical, Civil Engineering, and Logistics.",
-  "quote": "Please fill the form beside me and we’ll contact you within 24 hours.",
-  "address": "We are at Omo Isekuata, Ibozo, Delta State, Nigeria.",
-  "phone": "Call us: 0808 343 5500 or 0806 884 6086"
-}
-function sendMsg(){
-  let input = document.getElementById('userInput');
-  let msg = input.value.toLowerCase();
-  let body = document.getElementById('chat-body');
-  if(input.value.trim()==='') return;
-  body.innerHTML += `<p><b>You:</b> ${input.value}</p>`;
-  let reply = "Thanks for reaching out! You can also use the form or WhatsApp us.";
-  for(let key in replies){ if(msg.includes(key)){ reply = replies[key]; break; } }
-  body.innerHTML += `<p><b>Bot:</b> ${reply}</p>`;
-  input.value = '';
-  body.scrollTop = body.scrollHeight;
-}
-function sendForm(e){
-  e.preventDefault();
-  alert("Thank you! Your message has been sent. ICCL will contact you soon.");
-  e.target.reset();
-}
+function toggleChat(){const bot=document.getElementById('chatbot');bot.style.display=bot.style.display==='flex'?'none':'flex';}
+function sendMsg(){let i=document.getElementById('userInput');let m=i.value.toLowerCase();let b=document.getElementById('chat-body');if(i.value.trim()==='')return;b.innerHTML+=`<p><b>You:</b> ${i.value}</p>`;let r="Thanks! You can also use the form or WhatsApp us.";b.innerHTML+=`<p><b>Bot:</b> ${r}</p>`;i.value='';b.scrollTop=b.scrollHeight;}
+function sendForm(e){e.preventDefault();alert("Thank you! ICCL will contact you soon.");e.target.reset();}
 </script>
-
 </body>
 </html>
