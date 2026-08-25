@@ -10,11 +10,10 @@ body {
   line-height: 1.7;
 }
 
-/* ===== HEADER MOBILE FIX ===== */
 header {
   background: rgba(0,0,0,0.95);
   backdrop-filter: blur(10px);
-  padding: 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,26 +25,31 @@ header {
   flex-wrap: wrap;
 }
 
-.logo { color: #d4af37; font-weight: 900; font-size: 20px; letter-spacing: 2px; }
+.logo { 
+  color: #d4af37; 
+  font-weight: 900; 
+  font-size: clamp(15px, 3.5vw, 20px); 
+  letter-spacing: 1px; 
+  line-height: 1.2;
+}
 
-nav { display: flex; gap: 15px; flex-wrap: wrap; }
+nav { display: flex; gap: 12px; flex-wrap: wrap; }
 nav a { 
   color: #fff; text-decoration: none; 
-  font-weight: 600; font-size: 13px; 
+  font-weight: 600; font-size: clamp(11px, 3vw, 13px); 
   transition: 0.3s; text-transform: uppercase;
 }
 nav a.active, nav a:hover { color: #d4af37; }
 
-/* ===== HERO MOBILE FIX ===== */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932') center/cover;
+  background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1504328345606-18bbd8c713d2?q=80&w=2070') center/cover;
   padding: 160px 20px 100px;
   text-align: center;
   margin-top: 70px;
 }
 
-.hero h1 { font-size: clamp(32px, 8vw, 60px); color: #d4af37; margin-bottom: 20px; font-weight: 900; }
-.hero p { font-size: clamp(16px, 4vw, 20px); margin-bottom: 30px; color: #ccc; }
+.hero h1 { font-size: clamp(28px, 8vw, 60px); color: #d4af37; margin-bottom: 20px; font-weight: 900; }
+.hero p { font-size: clamp(15px, 4vw, 20px); margin-bottom: 30px; color: #ccc; max-width: 800px; margin-left: auto; margin-right: auto; }
 
 .btn {
   padding: 15px 30px;
@@ -57,78 +61,13 @@ nav a.active, nav a:hover { color: #d4af37; }
   transition: 0.3s;
   text-transform: uppercase;
   font-size: 13px;
+  border-radius: 2px;
 }
 .btn-gold { background: #d4af37; color: #000; border: 2px solid #d4af37; }
 .btn-gold:hover { background: transparent; color: #d4af37; }
 .btn-outline { background: transparent; color: #fff; border: 2px solid #fff; }
 .btn-outline:hover { background: #fff; color: #000; }
 
-/* ===== STATS MOBILE FIX ===== */
 .stats-bar {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  padding: 60px 20px;
-  background: #000;
-  text-align: center;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-}
-.stats-bar h3 { color: #d4af37; font-size: clamp(32px, 10vw, 48px); font-weight: 900; }
-.stats-bar p { color: #888; text-transform: uppercase; font-size: 11px; letter-spacing: 1px; }
-
-/* ===== SECTIONS ===== */
-.section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-.page-title { padding: 140px 20px 50px; text-align: center; background: #000; }
-.page-title h1 { font-size: clamp(32px, 8vw, 48px); color: #d4af37; font-weight: 900; }
-
-.section h2 { color: #d4af37; font-size: clamp(28px, 6vw, 40px); margin-bottom: 20px; text-align: center; font-weight: 900; }
-.section p.subtitle { text-align: center; color: #aaa; margin-bottom: 50px; }
-
-.grid-3 { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-  gap: 30px; 
-}
-.card {
-  background: #0a0a0a;
-  padding: 40px 30px;
-  border: 1px solid #222;
-  transition: 0.3s;
-}
-.card:hover { border-color: #d4af37; transform: translateY(-5px); }
-
-.testimonial {
-  background: #0a0a0a;
-  padding: 40px;
-  border-left: 3px solid #d4af37;
-  margin-bottom: 30px;
-}
-
-.clients { 
-  display: flex; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-  gap: 30px; 
-  opacity: 0.5; 
-}
-
-/* ===== WHATSAPP BUTTON MOBILE FIX ===== */
-.whatsapp-float {
-  position: fixed; bottom: 20px; right: 20px;
-  background: #25D366; color: #fff; padding: 15px 20px;
-  border-radius: 50px; text-decoration: none; font-weight: 700;
-  box-shadow: 0 8px 20px rgba(37,211,102,0.4); z-index: 999;
-  font-size: 14px;
-}
-
-footer { text-align: center; padding: 50px 20px; background: #000; border-top: 1px solid #222; color: #666; }
-
-/* ===== TABLET/DESKTOP ===== */
-@media (min-width: 768px) {
-  header { padding: 25px 60px; }
-  nav { gap: 35px; }
-  nav a { font-size: 14px; }
-  .stats-bar { grid-template-columns: repeat(4, 1fr); }
-  .section { padding: 100px 60px; }
-}
+  grid
