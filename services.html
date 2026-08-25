@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - IFEANYI CHIME AND CHIMA LTD</title>
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
   <header>
@@ -25,19 +25,29 @@
 
   <section class="section">
     <h2>Full Engineering Solutions</h2>
-    <div class="grid-3">
-      <div class="card"><h3>Civil Engineering</h3><p>Roads, buildings, bridges, drainage, and infrastructure projects.</p></div>
-      <div class="card"><h3>Mechanical Engineering</h3><p>Installation, maintenance, and servicing of industrial machines.</p></div>
-      <div class="card"><h3>Electrical Engineering</h3><p>Wiring, solar installation, generators, and power systems.</p></div>
-      <div class="card"><h3>Architectural Design</h3><p>Building plans, 3D designs, and structural drawings.</p></div>
-      <div class="card"><h3>Oil & Gas Services</h3><p>Field maintenance, equipment supply, and oil trading.</p></div>
-      <div class="card"><h3>Welding & Fabrication</h3><p>Custom gates, tanks, structures, and industrial fabrication.</p></div>
-      <div class="card"><h3>Trading & Supplies</h3><p>Supply of equipment, materials, and general goods.</p></div>
-      <div class="card"><h3>General Contracting</h3><p>Turnkey project management from start to finish.</p></div>
+    <div class="service-grid">
+      <div class="service-card"><img src="assets/civil.jpg" alt=""><div class="service-info"><h3>CIVIL ENGINEERING</h3><p>Roads, buildings, bridges, drainage, and infrastructure projects.</p></div></div>
+      <div class="service-card"><img src="assets/mechanical.jpg" alt=""><div class="service-info"><h3>MECHANICAL ENGINEERING</h3><p>Installation and maintenance of industrial machines.</p></div></div>
+      <div class="service-card"><img src="assets/electrical.jpg" alt=""><div class="service-info"><h3>ELECTRICAL ENGINEERING</h3><p>Wiring, solar, generators, and power systems.</p></div></div>
+      <div class="service-card"><img src="assets/construction.jpg" alt=""><div class="service-info"><h3>ROAD CONSTRUCTION</h3><p>Asphalt roads and civil infrastructure projects.</p></div></div>
+      <div class="service-card"><img src="assets/oilgas.jpg" alt=""><div class="service-info"><h3>OIL & GAS SERVICES</h3><p>Field maintenance and equipment supply.</p></div></div>
+      <div class="service-card"><img src="assets/realestate.jpg" alt=""><div class="service-info"><h3>REAL ESTATE & ARCHITECTURE</h3><p>Building plans and property development.</p></div></div>
+      <div class="service-card"><img src="assets/logistics.jpg" alt=""><div class="service-info"><h3>LOGISTICS & FABRICATION</h3><p>Supply of materials and custom fabrication.</p></div></div>
     </div>
   </section>
 
-  <a href="https://wa.me/2348083435500" class="whatsapp-float">WhatsApp Us</a>
+  <button id="chat-toggle" onclick="toggleChat()">💬 Chat with ICCL</button>
+  <div id="chatbot">
+    <div id="chat-header">ICCL Assistant 🤖 <span onclick="toggleChat()" style="float:right;cursor:pointer">X</span></div>
+    <div id="chat-body"><p><b>Bot:</b> Which service do you need? Ask me.</p></div>
+    <div id="chat-input"><input id="userInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendMsg()"><button onclick="sendMsg()">Send</button></div>
+  </div>
+
+  <a href="https://wa.me/2348083435500" class="whatsapp-float" target="_blank">WhatsApp Us</a>
   <footer><p>© 2026 IFEANYI CHIME AND CHIMA LTD | Email: ifeanyichimeandchimaltd@gmail.com</p></footer>
+<script>
+function toggleChat(){const bot=document.getElementById('chatbot');bot.style.display=bot.style.display==='flex'?'none':'flex';}
+function sendMsg(){let i=document.getElementById('userInput');let m=i.value.toLowerCase();let b=document.getElementById('chat-body');if(i.value.trim()==='')return;b.innerHTML+=`<p><b>You:</b> ${i.value}</p>`;let r="Which service? Civil, Mechanical, Electrical, Oil & Gas, Real Estate, Construction, or Logistics.";b.innerHTML+=`<p><b>Bot:</b> ${r}</p>`;i.value='';b.scrollTop=b.scrollHeight;}
+</script>
 </body>
 </html>
