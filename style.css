@@ -1,0 +1,57 @@
+/* ====== BLACK + GOLD BUSINESS THEME ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* HEADER + NAV */
+header {
+  background: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a.active, 
+nav a:hover {
+  color: #d4af37;
+}
+
+/* HERO SECTION */
+.hero {
+  background: #111;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 42px;
+  color: #d4af37;
+  margin-bottom: 20px;
